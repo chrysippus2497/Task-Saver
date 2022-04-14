@@ -4,41 +4,7 @@
     <meta charset="UTF-8">
     <title>Task Saver</title>
 </head>
-<style>
-   /* .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }*/
-    .container {
-        transform: translateY(50%);
-    }
-    .row {
-        text-align: center;
-    }
-
-    .column {
-        display: inline-block;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        width: 100px;
-        margin-top: 3px;
-        background: #d4d4d4;
-        cursor: pointer;
-    }
-    p {
-        transform: translate(0%, 100%);
-    }
-    .column:hover {
-        box-shadow: inset 0 0 0 1px green;
-    }
-
-    .selected {
-        background: green;
-        color: #fff;
-    }
-</style>
+<link rel="stylesheet" href="style.css">
 <body>
 
 <div class="container">
@@ -109,44 +75,6 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-
-    $(function() {
-        $('.column').click(function() {
-            $(this).toggleClass('selected');
-            var lsid = 'test' + this.dataset.id;
-            window.localStorage.setItem(lsid, $(this).hasClass('selected'));
-        });
-
-        $('.column').each(function() {
-            var lsid = 'test' + this.dataset.id;
-            if (localStorage.getItem(lsid) && localStorage.getItem(lsid) == "true") {
-                $(this).addClass('selected');
-            }
-        })
-    });
-
-    /*for (var i = 0; i < column.length; i++) {
-        let isCompleted = localStorage.getItem(column[i]);
-
-        if (isCompleted === "completed") {
-            column[i].style.background = "green";
-        } else {
-            column[i].style.background = "#d4d4d4";
-        }
-
-        column[i].addEventListener('click', function (e) {
-            if(isCompleted !== "completed") {
-                this.style.background = "#d4d4d4";
-                localStorage.setItem(this, "completed");
-            } else {
-                this.style.background = "green";
-                localStorage.setItem(this, null);
-            }
-        });
-    }*/
-
-</script>
-
+<script src="javascript.js"></script>
 </body>
 </html>
